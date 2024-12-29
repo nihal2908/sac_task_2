@@ -1,0 +1,14 @@
+[Unit]
+Description=Serve React App at Port 3000
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/ubuntu/.nvm/versions/node/v18.20.5/bin/serve -s /var/www/react/build -l 3000
+Restart=always
+User=ubuntu
+WorkingDirectory=/var/www/react/build
+Environment=PORT=3000
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Go backend Service at Port 4000
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/go run /var/www/fullstack_backend/server/main.go
+Restart=always
+User=ubuntu
+WorkingDirectory=/var/www/fullstack_backend/server
+Environment=PORT=4000
+
+[Install]
+WantedBy=multi-user.target
